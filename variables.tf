@@ -26,3 +26,14 @@ variable "policy_statements" {
   )
   default = []
 }
+
+variable "slack_notifications_enabled" {
+  description = "Notification slack or not"
+  type = bool
+}
+
+variable "alerts_ci_slack_notifications_arn" {
+  description = "sns slack address"
+  type = string
+  default = ""
+}

@@ -41,3 +41,20 @@ resource "aws_codepipeline" "pipeline" {
     }
   }
 }
+
+resource "aws_codestarnotifications_notification_rule" "aws_codestarnotifications_notification_rule_codepipeline" {
+  count = var.slack_notifications_enabled ? 1 : 0
+  detail_type = "BASIC"
+  event_type_ids = [
+    "codepipeline-pipeline-pipeline-execution-failed",
+    "codepipeline-pipeline-pipeline-execution-started",
+    "codepipeline-pipeline-pipeline-execution-succeeded"
+  ]
+
+  name     = "alerts-ci-slack-notification-rule-codepipeline"
+  resource = aws_codepipeline.pipeline.arn
+
+  target {
+    address = var.alerts_ci_slack_notifications_arn
+  }
+}
