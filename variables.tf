@@ -29,11 +29,17 @@ variable "policy_statements" {
 
 variable "slack_notifications_enabled" {
   description = "Notification slack or not"
-  type = bool
+  type        = bool
+}
+
+variable "slack-notification-rule-codepipeline-name" {
+  description = "Name of the codepipeline rule"
+  type        = string
+  default     = ""
 }
 
 variable "alerts_ci_slack_notifications_arn" {
   description = "sns slack address"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
