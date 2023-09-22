@@ -51,7 +51,7 @@ resource "aws_codestarnotifications_notification_rule" "aws_codestarnotification
     "codepipeline-pipeline-pipeline-execution-succeeded"
   ]
 
-  name     = "alerts-ci-slack-notification-rule-codepipeline"
+  name     = var.slack-notification-rule-codepipeline-name
   resource = aws_codepipeline.pipeline.arn
 
   target {
