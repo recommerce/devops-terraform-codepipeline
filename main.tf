@@ -11,7 +11,7 @@ module "artifacts-policy" {
 }
 
 resource "aws_s3_bucket" "artifacts" {
-  bucket = "${var.name}-artifacts-${var.env}"
+  bucket = "${var.name}-${var.env}"
 }
 
 resource "aws_codepipeline" "pipeline" {
