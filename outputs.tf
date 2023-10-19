@@ -11,8 +11,8 @@ output "arn" {
   value = aws_codepipeline.pipeline.arn
 }
 output "artifacts_bucket_arn" {
-  value = aws_s3_bucket.artifacts.arn
+  value = aws_s3_bucket.artifacts[*].arn
 }
 output "artifacts_bucket" {
-  value = aws_s3_bucket.artifacts.id
+  value = aws_s3_bucket.artifacts[*].id
 }
