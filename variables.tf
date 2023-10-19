@@ -43,3 +43,20 @@ variable "alerts_ci_slack_notifications_arn" {
   type        = string
   default     = ""
 }
+
+variable "create_s3_artifact" {
+  description = "create or not an S3 Artifact"
+  type        = bool
+  default     = true
+}
+
+variable "s3_artifact_Id" {
+  description = "s3 artifact Id"
+  type        = string
+  default     = ""
+}
+
+variable "role_pipeline_name" {
+  description = "pipeline role to use"
+  type        = string
+}
