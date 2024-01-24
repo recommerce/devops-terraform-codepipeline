@@ -61,5 +61,6 @@ resource "aws_codestarnotifications_notification_rule" "aws_codestarnotification
 
   target {
     address = var.alerts_ci_slack_notifications_arn
+    type    = var.alerts_ci_slack_notifications_type
   }
 }

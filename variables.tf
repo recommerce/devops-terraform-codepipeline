@@ -44,6 +44,12 @@ variable "alerts_ci_slack_notifications_arn" {
   default     = ""
 }
 
+variable "alerts_ci_slack_notifications_type" {
+  description = "sns slack address"
+  type        = string
+  default     = "SNS"
+}
+
 variable "create_s3_artifact" {
   description = "create or not an S3 Artifact"
   type        = bool
